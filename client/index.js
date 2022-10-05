@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import ApolloClient, { createNetworkInterface } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import {Router, hashHistory, Route, IndexRoute } from 'react-router';
-import App from './components/App';
 
+import App from './components/App';
+import LoginForm from './components/LoginForm';
 
 // this is to send cookies. I think it's extra.
 const networkInterface = createNetworkInterface({
@@ -24,8 +25,9 @@ const Root = () => {
     <ApolloProvider client={client}>
     <Router history={hashHistory}>
       <Route path="/" component={App}>
-
+      <Route path="login" component={LoginForm}/>
       </Route>
+
     </Router>
     </ApolloProvider>
   );

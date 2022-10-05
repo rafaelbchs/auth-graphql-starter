@@ -9,7 +9,9 @@ const Header = (props) => {
 
 
     function onLogoutClick() {
-        props.mutate({});
+        props.mutate({
+            refetchQueries: [{query}]
+        });
     }
 
     function renderButtons(){
