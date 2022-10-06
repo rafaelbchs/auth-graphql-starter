@@ -6,6 +6,8 @@ import {Router, hashHistory, Route, IndexRoute } from 'react-router';
 import SignupForm from './components/SignupForm';
 import App from './components/App';
 import LoginForm from './components/LoginForm';
+import Dashboard from './components/Dashboard';
+import requireAuth from './components/requireAuth';
 
 // this is to send cookies. I think it's extra.
 const networkInterface = createNetworkInterface({
@@ -27,6 +29,7 @@ const Root = () => {
       <Route path="/" component={App}>
       <Route path="login" component={LoginForm}/>
       <Route path="signup" component={SignupForm} />
+      <Route path="dashboard" component={requireAuth(Dashboard)}/>
       </Route>
 
     </Router>
